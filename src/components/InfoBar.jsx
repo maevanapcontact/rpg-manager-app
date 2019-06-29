@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import characterData from '../character';
 
 const Root = styled.header`
   display: flex;
@@ -12,22 +13,16 @@ const Root = styled.header`
 const Data = styled.p``;
 
 export default function InfoBar() {
-  const character = {
-    name: 'Maeva',
-    title: 'Geek',
-    level: 1,
-  };
-
   return (
     <Root>
       <Data>
-        {`Name: ${character.name}`}
+        {`Name: ${characterData.name}`}
       </Data>
       <Data>
-        {`Title: ${character.title}`}
+        {`Race: ${characterData.race}`}
       </Data>
       <Data>
-        {`Level: ${character.level}`}
+        {`Level: ${characterData.level}`}
       </Data>
     </Root>
   );
