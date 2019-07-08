@@ -13,6 +13,7 @@ const Root = styled.main`
   position: relative;
   width: 100%;
   height: 100%;
+  background: #f8eed3;
 `;
 
 export default function App() {
