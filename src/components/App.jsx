@@ -5,6 +5,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 import Log from './Log';
+import CreateCharacter from './CreateCharacter';
 import InfoBar from './InfoBar';
 import Dashboard from './Dashboard';
 import MainMenu from './MainMenu';
@@ -32,6 +33,7 @@ export default function App() {
         <InfoBar />
         <Content>
           <Route path="/" exact component={Log} />
+          <Route path="/create" exact component={CreateCharacter} />
           <Route path="/character" exact component={Character} />
           <Route path="/quests" exact component={Dashboard} />
           <Route path="/bank" exact component={Dashboard} />

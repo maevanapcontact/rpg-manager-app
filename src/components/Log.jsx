@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import wisp from '../assets/images/wisp.png'; 
+import wisp from '../assets/images/wisp.png';
 
 const Root = styled.section`
   width: 100%;
