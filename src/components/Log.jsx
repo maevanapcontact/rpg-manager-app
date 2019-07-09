@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import wisp from '../assets/images/wisp.png'; 
 
 const Root = styled.section`
   width: 100%;
@@ -7,11 +8,11 @@ const Root = styled.section`
   margin: 80px auto 20px auto;
 `;
 
-const Img = styled.div`
+const Img = styled.img`
+  display: block;
   width: 250px;
   height: 250px;
   margin: auto;
-  background: #333;
 `;
 
 const Content = styled.p`
@@ -46,7 +47,7 @@ const Btn = styled.button`
 export default function Log() {
   return (
     <Root>
-      <Img />
+      <Img src={wisp} alt="new soul" />
       <Content>Welcome new soul! Do you have a character?</Content>
       <Buttons>
         <Btn type="button">Yes! Log me in!</Btn>
