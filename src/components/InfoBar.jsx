@@ -1,6 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
-import characterData from '../character';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+
+const GET_CHARACTER = gql`
+  query Character($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      race
+      level
+      xp
+      picture
+      gender
+      profession
+      health
+      armor
+      intelligence
+      force
+      dexterity
+      wisdom
+      constitution
+      charisma
+    }
+  }
+`;
 
 const Root = styled.header`
   display: flex;
@@ -63,19 +87,31 @@ const InnerBorder = styled.div`
 
 export default function InfoBar() {
   return (
-    <Root>
-      <Avatar>
-        <InnerAvatar />
-      </Avatar>
-      <Infos>
-        <InnerInfos>
-          <Data>{characterData.name}</Data>
-          <InnerBorder />
-          <Data>{characterData.race}</Data>
-          <InnerBorder />
-          <Data>{`lvl: ${characterData.level}`}</Data>
-        </InnerInfos>
-      </Infos>
-    </Root>
+    <Query query={GET_CHARACTER} variables={{ id: '5d24df2965d9430324cdf65b' }}>
+      {({ loading, error, data }) => {
+        if (loading || error) {
+          return <Root />;
+        }
+
+        const { character } = data;
+
+        return (
+          <Root>
+            <Avatar>
+              <InnerAvatar />
+            </Avatar>
+            <Infos>
+              <InnerInfos>
+                <Data>{character.name}</Data>
+                <InnerBorder />
+                <Data>{character.race}</Data>
+                <InnerBorder />
+                <Data>{`lvl: ${character.level}`}</Data>
+              </InnerInfos>
+            </Infos>
+          </Root>
+        );
+      }}
+    </Query>
   );
 }
