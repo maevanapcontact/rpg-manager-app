@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
+import Log from './Log';
 import InfoBar from './InfoBar';
 import Dashboard from './Dashboard';
 import MainMenu from './MainMenu';
@@ -30,6 +31,7 @@ export default function App() {
       <Root>
         <InfoBar />
         <Content>
+          <Route path="/" exact component={Log} />
           <Route path="/character" exact component={Character} />
           <Route path="/quests" exact component={Dashboard} />
           <Route path="/bank" exact component={Dashboard} />
