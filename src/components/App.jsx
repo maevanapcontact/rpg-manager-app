@@ -10,6 +10,7 @@ import InfoBar from './InfoBar';
 import Dashboard from './Dashboard';
 import MainMenu from './MainMenu';
 import Character from './Character';
+import Bank from './Bank';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/api',
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/create" exact component={CreateCharacter} />
           <Route path="/character" exact component={Character} />
           <Route path="/quests" exact component={Dashboard} />
-          <Route path="/bank" exact component={Dashboard} />
+          <Route path="/bank" exact component={Bank} />
           <Route path="/notes" exact component={Dashboard} />
         </Content>
         <MainMenu />
