@@ -44,13 +44,18 @@ const CREATE_CHARACTER = gql`
 const Root = styled.section`
   width: 100%;
   max-width: 600px;
-  margin: auto;
+  margin: 0 auto 100px auto;
   padding: 10px;
 `;
 
 const CharacterForm = styled.form``;
 
-const InnerForm = styled.div``;
+const InnerForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20px auto;
+`;
 
 const Img = styled.div`
   width: 100%;
@@ -60,7 +65,13 @@ const Img = styled.div`
   margin: 80px auto 20px auto;
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  color: #633921;
+  font-size: 1.2em;
+`;
 
 const Name = styled(Label)`
   display: block;
@@ -68,16 +79,49 @@ const Name = styled(Label)`
   text-align: center;
 `;
 
-const Input = styled.input``;
+const LabelContent = styled.span`
+  width: 120px;
+  font-weight: 600;
+`;
+
+const Input = styled.input`
+  width: 150px;
+  background-color: none;
+  background: #f8eed3;
+  border: none;
+  border-bottom: 2px solid #633921;
+  color: #633921;
+  font-style: italic;
+  font-size: 1em;
+`;
 
 const GenderChoice = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0 0 20px 0;
 `;
 
-const Gender = styled.button``;
+const Gender = styled.button`
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 5px solid #b58b51;
+  background: #633921;
+  color: #fff;
+  font-weight: 600;
+  margin: 5px 10px;
 
-const Submit = styled.button``;
+  &:hover {
+    cursor: pointer;
+    background: #600204;
+    text-decoration: underline;
+  }
+`;
+
+const Submit = styled(Gender)`
+  display: block;
+  margin: auto;
+  font-size: 1.2em;
+`;
 
 function HandleSubmit(evt) {
   evt.preventDefault();
@@ -130,47 +174,47 @@ export default function CreateCharacter() {
             </Name>
             <InnerForm>
               <Label>
-                Race
+                <LabelContent>Race:</LabelContent>
                 <Input type="text" value={race} placeholder="Race" onChange={evt => setRace(evt.target.value)} />
               </Label>
               <Label>
-                Profession
+                <LabelContent>Profession:</LabelContent>
                 <Input type="text" value={profession} placeholder="Profession" onChange={evt => setProfession(evt.target.value)} />
               </Label>
               <Label>
-                Health
+                <LabelContent>Health:</LabelContent>
                 <Input type="number" value={health} min={0} max={100} onChange={evt => setHealth(evt.target.value)} />
               </Label>
               <Label>
-                Armor
+                <LabelContent>Armor:</LabelContent>
                 <Input type="number" value={armor} min={0} max={100} onChange={evt => setArmor(evt.target.value)} />
               </Label>
               <Label>
-                Force
+                <LabelContent>Force:</LabelContent>
                 <Input type="number" value={force} min={0} max={100} onChange={evt => setForce(evt.target.value)} />
               </Label>
               <Label>
-                Dexterity
+                <LabelContent>Dexterity:</LabelContent>
                 <Input type="number" value={dexterity} min={0} max={100} onChange={evt => setDexterity(evt.target.value)} />
               </Label>
               <Label>
-                Wisdom
+                <LabelContent>Wisdom:</LabelContent>
                 <Input type="number" value={wisdom} min={0} max={100} onChange={evt => setWisdom(evt.target.value)} />
               </Label>
               <Label>
-                Constitution
+                <LabelContent>Constitution:</LabelContent>
                 <Input type="number" value={constitution} min={0} max={100} onChange={evt => setConstitution(evt.target.value)} />
               </Label>
               <Label>
-                Charisma
+                <LabelContent>Charisma:</LabelContent>
                 <Input type="number" value={charisma} min={0} max={100} onChange={evt => setCharisma(evt.target.value)} />
               </Label>
               <Label>
-                Intelligence
+                <LabelContent>Intelligence:</LabelContent>
                 <Input type="number" value={intelligence} min={0} max={100} onChange={evt => setIntelligence(evt.target.value)} />
               </Label>
               <Label>
-                Money
+                <LabelContent>Money:</LabelContent>
                 <Input type="number" value={money} min={0} max={100} onChange={evt => setMoney(evt.target.value)} />
               </Label>
             </InnerForm>

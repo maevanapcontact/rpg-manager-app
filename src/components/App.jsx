@@ -18,12 +18,13 @@ const client = new ApolloClient({
 const Root = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: #f8eed3;
 `;
 
 const Content = styled.main`
   padding: 10px;
+  min-height: 100%;
 `;
 
 export default function App() {

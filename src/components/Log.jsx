@@ -4,6 +4,7 @@ import wisp from '../assets/images/wisp.png';
 
 const Root = styled.section`
   width: 100%;
+  height: 100%;
   max-width: 600px;
   margin: 80px auto 20px auto;
 `;
