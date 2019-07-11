@@ -87,7 +87,7 @@ const InnerBorder = styled.div`
 
 export default function InfoBar() {
   return (
-    <Query query={GET_CHARACTER} variables={{ id: '5d24df2965d9430324cdf65b' }}>
+    <Query query={GET_CHARACTER} variables={{ id: '5d276702944fff0f243a195f' }}>
       {({ loading, error, data }) => {
         if (loading || error) {
           return <Root />;

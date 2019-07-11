@@ -156,6 +156,9 @@ export default function CreateCharacter() {
                   setGender('male');
                   setPicture('male');
                 }}
+                style={{
+                  backgroundColor: gender === 'male' ? '#600204' : '#633921',
+                }}
               >
                 Male
               </Gender>
@@ -164,6 +167,9 @@ export default function CreateCharacter() {
                 onClick={() => {
                   setGender('female');
                   setPicture('female');
+                }}
+                style={{
+                  backgroundColor: gender === 'female' ? '#600204' : '#633921',
                 }}
               >
                 Female
